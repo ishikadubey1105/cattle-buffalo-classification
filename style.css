@@ -1,0 +1,264 @@
+/* Animal Type Classification System Styles */
+
+/* Tab System */
+.tab-button {
+  @apply inline-flex items-center px-6 py-3 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out;
+}
+
+.tab-button.active {
+  @apply border-green-500 text-green-600;
+}
+
+.tab-content {
+  @apply transition-opacity duration-300 ease-in-out;
+}
+
+.tab-content.hidden {
+  @apply opacity-0 pointer-events-none;
+}
+
+/* Loading animations */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Score display */
+.score-excellent {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.score-very-good {
+  @apply bg-blue-100 text-blue-800 border-blue-200;
+}
+
+.score-good {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.score-fair {
+  @apply bg-orange-100 text-orange-800 border-orange-200;
+}
+
+.score-poor {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+/* Progress bars */
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-2 overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-green-500 transition-all duration-1000 ease-out;
+}
+
+/* Confidence indicators */
+.confidence-high {
+  @apply bg-green-500;
+}
+
+.confidence-medium {
+  @apply bg-yellow-500;
+}
+
+.confidence-low {
+  @apply bg-red-500;
+}
+
+/* Image upload area hover effects */
+.upload-area:hover {
+  @apply border-green-400 bg-green-50;
+}
+
+/* Measurement display grid */
+.measurement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Animal card styles */
+.animal-card {
+  @apply bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-200;
+}
+
+.animal-card:hover {
+  @apply border-green-300;
+}
+
+/* Grade badge styles */
+.grade-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border;
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+  .responsive-text {
+    @apply text-sm;
+  }
+  
+  .responsive-title {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 641px) {
+  .responsive-text {
+    @apply text-base;
+  }
+  
+  .responsive-title {
+    @apply text-2xl;
+  }
+}
+
+/* Print styles for reports */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-after: always;
+  }
+}
+
+/* Custom scrollbars */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #10b981;
+  border-radius: 3px;
+}
+
+/* Mobile-first responsive design */
+.mobile-stack {
+  @apply flex flex-col space-y-2;
+}
+
+@media (min-width: 768px) {
+  .mobile-stack {
+    @apply flex-row space-y-0 space-x-4;
+  }
+}
+
+/* Form validation styles */
+.field-error {
+  @apply border-red-300 bg-red-50;
+}
+
+.field-success {
+  @apply border-green-300 bg-green-50;
+}
+
+.error-message {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.success-message {
+  @apply text-green-600 text-sm mt-1;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Status indicators */
+.status-pending {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.status-approved {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-rejected {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.status-synced {
+  @apply bg-blue-100 text-blue-800 border-blue-200;
+}
+
+/* Data visualization */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 bg-gray-200 rounded animate-pulse;
+}
+
+.skeleton-avatar {
+  @apply w-12 h-12 bg-gray-200 rounded-full animate-pulse;
+}
