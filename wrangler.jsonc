@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cattle-atc-system",
+  "main": "src/index.tsx",
+  "compatibility_date": "2025-09-13",
+  "pages_build_output_dir": "./dist",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  // D1 Database for animal classification data
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cattle-atc-production",
+      "database_id": "placeholder-will-be-updated-after-creation"
+    }
+  ],
+  // Cloudflare AI for computer vision tasks
+  "ai": {
+    "binding": "AI"
+  }
+}
